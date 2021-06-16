@@ -21,7 +21,7 @@ export const timerMachine = createMachine({
       on: {
         TOGGLE: 'paused',
         ADD_MINUTE: {
-          target: 'running',
+          target: undefined, // default when you don't want to transition from this state
           actions: assign({
             duration: (context, event) => {
               return context.duration + 60;
